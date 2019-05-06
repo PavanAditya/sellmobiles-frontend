@@ -9,10 +9,10 @@ import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
-/* import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
+import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
-import { environment } from 'src/environments/environment'; */
-// import { environment } from '../../environments/environment.prod';
+// import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment.prod';
 import { DetailsInMobileComponent } from './about/details-in-mobile/details-in-mobile.component';
 
 
@@ -31,21 +31,21 @@ import { DetailsInMobileComponent } from './about/details-in-mobile/details-in-m
   ],
   imports: [
     SharedModule,
-/*     RecaptchaModule,
-    RecaptchaFormsModule */
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   exports : [
     HeaderComponent,
     FooterComponent,
     SideNavComponent
   ],
- /*  providers: [
+  providers: [
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
         siteKey: environment.siteKey,
       } as RecaptchaSettings,
     }
-  ] */
+  ]
 })
 export class CoreModule { }

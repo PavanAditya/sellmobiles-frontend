@@ -97,7 +97,7 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
         Validators.pattern(`^(?=.*[A-Z])(?=.*[!@#$&*\^%\*\.])(?=.*[0-9])(?=.*[a-z]).{8,32}$`),
         Validators.required
       ]),
-      // captchaForSignUp: new FormControl(null, Validators.required)
+      captchaForSignUp: new FormControl(null, Validators.required)
     });
   }
 
