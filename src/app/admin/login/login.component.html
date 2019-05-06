@@ -1,0 +1,33 @@
+<div class="login-page" fxLayout="row wrap">
+  <div class="content" fxLayout="column" fxFlex>
+    <form [formGroup]="signInForm" (ngSubmit)="signInValidation()" class="login-form">
+      <div class="text-center">
+        <h2 class="app-name">Admin</h2>
+      </div>
+
+      <div>
+        <mat-form-field class="w-100">
+          <input type="email" matInput placeholder="Username" formControlName="email">
+          <mat-error>Enter valid username address</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="w-100">
+          <input matInput type="{{ typeSignInIcon }}" placeholder="Password" formControlName="password">
+          <mat-icon id="passwordVisible" #passwordVisible matSuffix (click)="visibilitySignInIcon()">
+            {{ hideSignInIcon ? 'visibility_off' : 'visibility_on' }}
+          </mat-icon>
+          <mat-error>Invalid password</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div id="margin">
+      </div>
+      <div>
+        <button type="submit" mat-raised-button color="primary" class="w-100"
+          [disabled]="!signInForm.valid">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

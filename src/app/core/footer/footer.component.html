@@ -1,0 +1,40 @@
+
+<footer  id="body" fxLayout="column" fxLayoutAlign="center center" fxFlexFill fxFlex="1 1 calc(33.3% - 32px)">
+  <div fxFlexLayout= "row wrap" fxLayout.lt-sm="column" fxFlex="1 0 calc(33.3% - 32px)" >
+      <div class="firstrow" fxLayout="row wrap" fxLayoutGap="70px" fxLayoutAlign="space-around start" fxFlex="1 1 calc(33.3% - 32px)" fxFlex.lt-md="1 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+          <div><a (click)='home()' class='knowus'>Home</a></div>
+          <div><a (click)='aboutUs()' class='knowus'>About</a></div>
+          <div><a (click)='contactUs()' class='knowus'>Contact</a></div>
+        </div>
+  </div>
+
+  <div class="address" fxFlexLayout= "row wrap" fxLayout.lt-sm="column">
+    <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="space-around start" fxFlex="1 1 calc(33.3% - 32px)" fxFlex.lt-md="1 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+        <div>Mindtree Ltd. </div>
+        <div>Chandaka Industrial Estate </div>
+        <div>Bhubaneswar, Odisha 751024</div>
+    </div>
+  </div>
+  <div>
+    <div class="social-media" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+      <mat-list class='padd'>
+        <a href='https://www.facebook.com/MindtreeLtd/' target="_blank"> <img [src]='footerImages.facebook' class='imgstyle'>
+        </a>
+      </mat-list>
+      <mat-list class='padd'>
+        <a href='https://www.mindtree.com' target="_blank"> <img [src]='footerImages.google' class='imgstyle'> </a>
+      </mat-list>
+      <mat-list class='padd'>
+        <a href='https://twitter.com/Mindtree_Ltd' target="_blank"> <img
+          [src]='footerImages.twitter' class='imgstyle'> </a>
+      </mat-list>
+      <mat-list class='padd'>
+        <a href='https://www.linkedin.com/company/mindtreeltd/' target="_blank"> <img [src]='footerImages.linkedin'
+            class='imgstyle'> </a>
+      </mat-list>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2019 Copyrighted by SellMobile</p>
+  </div>
+</footer>

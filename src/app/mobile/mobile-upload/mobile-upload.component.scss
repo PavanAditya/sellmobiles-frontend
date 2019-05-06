@@ -1,0 +1,89 @@
+.progressbar {
+  width: 251px;
+  float: right;
+  padding-top: 20px;
+}
+
+
+.formstyle {
+  min-height: 557px;
+}
+
+.space {
+  padding-bottom: 10px;
+}
+
+.gap {
+  padding: 10px;
+}
+
+
+#specification {
+  text-align: center;
+}
+
+.submitbutton {
+  float: right;
+  margin-top: -27px;
+}
+
+
+mat-form-field {
+  width: 25%;
+}
+
+
+.mobileform {
+  padding: 30px;
+  height: 100%;
+  padding-top: 105px;
+}
+
+.uploaded-images {
+  height: 125px;
+  width: 125px;
+  float: right;
+}
+
+.imgDiv {
+
+  width: 25%;
+  float: right;
+  margin-top: 5%;
+  margin-right: -87px;
+}
+
+.btn-upload {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-upload input[type=file] {
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.btn-upload .btn {
+  background: #ffffff00;
+  border: 0;
+  cursor: pointer;
+  img {
+    height: 50px;
+  }
+}
+
+.btn-upload .btn:hover {
+  background: #ffffff00;
+  border: 0;
+  cursor: pointer;
+  img {
+    height: 50px;
+  }
+}

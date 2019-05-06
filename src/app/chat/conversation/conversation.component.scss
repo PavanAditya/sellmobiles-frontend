@@ -1,0 +1,106 @@
+.message-wrapper {
+  height: 450px;
+}
+
+.message-container {
+  height: 450px;
+}
+
+.message-typer {
+  position: absolute;
+  height: 15%;
+  width: 77%;
+  margin-bottom: 10px;
+}
+
+.main {
+  height: 100%;
+  background-repeat: repeat;
+}
+
+.opposite-user {
+  background-color: rgba(16, 63, 2, 0.76);
+  height: 40px;
+  color: #fff;
+  width: 100%;
+  text-align: left;
+  font-size: 140%;
+  font-family: 'Rubik', sans-serif;
+  border: solid 1px #70155d;
+  padding-left: 1%;
+  padding-top: 1%;
+  -webkit-box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 30px rgba(46, 24, 3, 0.61);
+  position: absolute;
+}
+
+.overlay {
+  min-height: 290px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.82);
+  z-index: 1;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.sub-heading {
+  font-size: 20px;
+  color: rgb(98, 173, 0);
+}
+
+.message-thread {
+  height: 425px;
+  width: 100%;
+  padding-top: 45px !important;
+  margin: 0px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+.start-chatting-banner {
+  padding-top: 25% !important;
+  text-align: center;
+}
+
+.message-thread li {
+  clear: both;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 20px 10px 0px 20px;
+  margin-right: 20px;
+  padding: 15px 24px;
+  min-height: 10px;
+  width: 150px;
+  border-radius: 5px;
+  border: solid 1px #101b07;
+  line-height: 1.4;
+  word-wrap: break-word;
+  color: #444444;
+  text-align: left;
+  background-color: rgba(235, 235, 235, 0.719);
+  font-family: 'Rubik', sans-serif;
+}
+
+.align-right {
+  float: right !important;
+  text-align: right;
+}
+
+li.align-right.ng-star-inserted {
+  background-color: #a7ee65c7;
+}
+
+.message {
+  width: 98%;
+  height: 10%;
+  padding: 1%;
+
+  input {
+    width: 100%;
+    height: 2rem;
+    border: groove;
+    border-radius: 9px;
+    background-color: rgba(233, 233, 233, 0.712);
+  }
+}

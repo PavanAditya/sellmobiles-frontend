@@ -1,0 +1,49 @@
+<div class="mat-elevation-z8">
+  <mat-accordion>
+    <div fxLayout='row'>
+      <div fxFlex="33%">
+        <h4 class="header">User Name</h4>
+      </div>
+      <div fxFlex="33%">
+        <h4 class="header">Email</h4>
+      </div>
+    </div>
+    <mat-expansion-panel *ngFor="let result of results">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <p>{{result.firstName}} {{result.lastName}}</p>
+        </mat-panel-title>
+        <mat-panel-description>
+          <p>{{result.email}}</p>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="result.mobilesuploaded.length > 0" fxLayout='row'>
+        <div fxFlex="33%">
+          <h4>Mobile Name</h4>
+        </div>
+        <div fxFlex="33%">
+          <h4>Price</h4>
+        </div>
+        <div fxFlex="33%">
+          <h4>Delete</h4>
+        </div>
+      </div>
+      <div *ngIf="result.mobilesuploaded.length === 0">
+        <h4>No Mobiles Uploaded</h4>
+      </div>
+      <div fxLayout='row' *ngFor="let res of result.mobilesuploaded">
+        <div fxFlex="33%">
+          {{res.brand}} {{res.model}}
+        </div>
+        <div fxFlex="33%">
+          {{res.price | currency:"&#8377;"}}
+        </div>
+        <div fxFlex="33%">
+          <mat-icon (click)="deletePost(res._id)">delete</mat-icon>
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

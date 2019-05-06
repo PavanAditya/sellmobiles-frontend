@@ -1,0 +1,29 @@
+<div [ngClass]="disableBackground()">
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+</div>
+<div class="main">
+  <h3>My Wishlist</h3>
+  <div *ngIf="!likedMobilesPresent" class="nomobiles">
+    <h4>You haven't liked any mobile till now</h4>
+  </div>
+  <div class="container" *ngIf="likedMobilesPresent" fxLayout="row wrap" fxLayout.xs="column"
+    fxLayoutAlign="center start" fxLayoutGap="0%">
+    <mat-card class="card-picture" *ngFor="let mobile of mobilesList">
+      <div id="heart">
+        <mat-icon [ngClass]="toggleLikeClass(mobile)" [matTooltip]="toggleToolTip()"
+          (click)="like(mobile)">{{cardText}}</mat-icon>
+        <mat-icon class="hide"></mat-icon>
+      </div>
+      <div id="cursor-container" (click)="viewMobile(mobile)">
+        <div class="img-container">
+          <img class="img" src='{{mobile.image[0]}}' alt="Photo of a mobile" fxLayoutAlign="center center">
+        </div>
+        <mat-card-title class="font" fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="center center">
+          <span><b>{{mobile.brand}} {{mobile.model}}</b></span>
+        </mat-card-title>
+        <span class="hide font"><b>{{mobile.price | currency:"&#8377;"}}</b></span>
+        <span class="show font"><b>Ram: {{mobile.ram}} Rom: {{mobile.rom}}</b></span>
+      </div>
+    </mat-card>
+  </div>
+</div>

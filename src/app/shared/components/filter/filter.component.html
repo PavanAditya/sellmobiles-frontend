@@ -1,0 +1,14 @@
+<form [formGroup]="filterForm">
+  <h4>Brands</h4>
+  <div *ngFor="let item of mobileInformation.brands">
+    <mat-checkbox color="primary" formControlName="brand" (change)="brandResult($event, item)">{{item}}</mat-checkbox>
+  </div>
+  <h4>Ram</h4>
+  <div *ngFor="let item of mobileInformation.ram">
+    <mat-checkbox color="primary" formControlName="ram" (change)="ramResult($event, item)">{{item}}GB</mat-checkbox>
+  </div>
+  <h4>Rom</h4>
+  <div *ngFor="let item of mobileInformation.rom">
+    <mat-checkbox color="primary" formControlName="rom" (change)="romResult($event, item)">{{item}}GB</mat-checkbox>
+  </div>
+</form>

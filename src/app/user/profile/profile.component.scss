@@ -1,0 +1,570 @@
+#main {
+  padding-top: 100px;
+  width: 80%;
+  margin: auto;
+  height: 800px;
+  background-image: url('../../../assets/images/profile2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1{
+  font-size: 20px;
+}
+.linegapName{
+  margin-left: 32px;
+}
+.linegapEmail{
+  margin-left: 10px;
+}
+.linegapFirstName{
+  margin-left: 25px;
+}
+.linegapLastName{
+  margin-left: 25px;
+}
+.linegapNumber{
+  margin-left: 27px;
+}
+.linegapLocation{
+  margin-left: 40px;
+}
+#spaceButtons{
+  padding-left: 50px;
+}
+.updateButton{
+  width: 100%;
+  margin-left: 4px;
+}
+.cancelButton{
+  width: 100%;
+}
+#matProfile {
+  margin-top: 50px;
+  height: 600px;
+  width: 40%;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  background: white;
+  color: #fff;
+  margin-top: 35px;
+
+}
+
+#image {
+  background: #fb641b;
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+}
+
+#content {
+  width: 100%;
+
+  height: 300px;
+}
+
+#profileImage {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  padding-top: 20px;
+  padding-left: 42%
+}
+
+.name {
+  text-align: center;
+
+}
+
+.displaySize {
+  height: 50px;
+  width: 300px;
+  align-self: center;
+  text-align: justify;
+  margin-left: -100px;
+  font-size: 16px;
+  text-align-last: left;
+
+}
+
+.cancelButton {
+  margin-left: 5px
+}
+
+@media only screen and (max-width: 1200px) {
+  #main {
+    padding-top: 100px;
+    width: 83%;
+    margin: auto;
+    height: 750px;
+    background-image: url('../../../assets/images/profile2.jpg');
+  }
+  h1{
+    font-size: 18px;
+  }
+  #image {
+    background: #fb641b;
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+  }
+
+  #profileImage {
+    height: 80px;
+    width: 80px;
+    margin: auto;
+    padding-top: 15px;
+    padding-left: 40%
+  }
+
+  .name {
+    padding-left: 7%;
+    font-size: 16px;
+  }
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+  #content {
+    width: 100%;
+
+    height: 200px;
+  }
+
+  .displaySize {
+    height: 50px;
+    width: 300px;
+    align-self: center;
+    text-align: justify;
+    font-size: 15px;
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 1370px) {
+  .displaySize{
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #main {
+    padding-top: 100px;
+    width: 84%;
+    margin: auto;
+    height: 750px;
+    background-image: url('../../../assets/images/profile2.jpg');
+  }
+
+  #image {
+    background: #fb641b;
+    width: 350px;
+    height: 130px;
+    border-radius: 5px;
+  }
+
+  #content {
+    width: 350px;
+
+    height: 200px;
+  }
+
+  #profileImage {
+    height: 70px;
+    width: 70px;
+    margin: auto;
+    padding-top: 10px;
+    padding-left: 42%
+  }
+
+  .name {
+    padding-left: 6%;
+    font-size: 16px;
+  }
+
+  .displaySize {
+    height: 50px;
+    width: 300px;
+    align-self: center;
+    text-align: justify;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  h1{
+    font-size: 16px;
+  }
+  #main {
+    padding-top: 100px;
+    width: 87%;
+    margin: auto;
+    height: 750px;
+    background-image: url('../../../assets/images/profile2.jpg');
+  }
+
+  #image {
+    background: #fb641b;
+    width: 300px;
+    height: 120px;
+    border-radius: 5px;
+
+  }
+
+  #content {
+    width: 300px;
+
+    height: 200px;
+  }
+
+  #profileImage {
+    height: 60px;
+    width: 60px;
+    margin: auto;
+    padding-top: 8px;
+    padding-left: 42%
+  }
+
+  .name {
+    padding-left: 5%;
+    font-size: 14px;
+  }
+
+  .displaySize {
+    height: 50px;
+    width: 300px;
+    align-self: center;
+    text-align: justify;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 686px) {
+  #image {
+    background: #fb641b;
+    width: 300px;
+    height: 110px;
+    border-radius: 5px;
+  }
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 150px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+  #content {
+    width: 300px;
+    height: 200px;
+  }
+
+  #profileImage {
+    height: 55px;
+    width: 55px;
+    margin: auto;
+    padding-top: 7px;
+    padding-left: 42%
+  }
+
+  .name {
+    padding-left: 4%;
+    font-size: 14px;
+  }
+
+  .displaySize {
+    height: 50px;
+    width: 300px;
+    align-self: center;
+    text-align: justify;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 120px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 100px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 568px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 90px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 530px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 80px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 520px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 65px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 490px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 50px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 460px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 40px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 430px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 30px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 420px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 25px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 405px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 18px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 395px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 12px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 375px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 363px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 40%;
+    margin: auto;
+    margin-left: 6px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+}
+
+@media only screen and (max-width: 355px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 36%;
+    margin: auto;
+    margin-left: 4px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+@media only screen and (max-width: 349px) {
+
+  #matProfile {
+    margin-top: 50px;
+    height: 400px;
+    width: 35%;
+    margin: auto;
+    margin-left: 4px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    background: white;
+    color: #fff;
+    margin-top: 35px;
+
+  }
+
+}
+
+

@@ -1,0 +1,91 @@
+<div id="outerDiv">
+  <form [formGroup]="priceForm" (ngSubmit)="updatePrice()">
+    <div id="imageContainer">
+      <div>
+        <div class="smallImage">
+          <div class="row" *ngFor=" let urls of url">
+            <div class="column">
+              <img [src]="urls" alt="mobile" style="width:100%" (mouseover)="changeImage($event)">
+            </div>
+
+          </div>
+        </div>
+        <div class="largeImage">
+          <div class="container">
+            <img id="largeImageStyle" src='{{selectedMobile?.image[0]}}' alt="Mobile" style="width:100%" #expandedImg>
+
+          </div>
+        </div>
+      </div>
+      <div id="allButtonsGroup">
+        <div class="buttons" *ngIf="userIsAuthenticated" fxLayout="row wrap" fxLayout.xs="column">
+          <div *ngIf="isSeller()">
+            <button class="buttonsFont" id="buttonOfEdit" type="button" *ngIf="!editToggle" (click)="editPrice()"
+              mat-raised-button>
+              <mat-icon>create</mat-icon> Edit Mobile
+            </button>
+            <button class="buttonsFont" id="buttonOfupdate" type="submit" *ngIf="editToggle" class="buttonOfEdit"
+              [disabled]="!priceForm.valid" mat-raised-button color="primary">
+              Update
+            </button>
+          </div>
+          <span id="space"></span>
+          <div *ngIf="isSeller()">
+            <button class="buttonsFont" id="buttonOfDelete" type="button" *ngIf="!editToggle"
+              (click)="onDelete(selectedMobile)" mat-raised-button>
+              <mat-icon>delete_sweep</mat-icon> Remove Mobile
+            </button>
+            <button class="buttonsFont" id="buttonOfcancel" type="button" (click)="cancelEdit()" *ngIf="editToggle"
+              class="cancelButton" mat-raised-button color="warn">
+              Cancel
+            </button>
+          </div>
+        </div>
+        <div class="chatButtonGlobal">
+          <button class="buttonsFont" type="button" id="buttonOfChat" *ngIf="!isSeller()" (click)="chatWithSeller()"
+            mat-raised-button>
+            <mat-icon>chat</mat-icon> Chat With Seller
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div id="details">
+      <p id="fontOfHeading">{{selectedMobile?.brand}} {{selectedMobile?.model}} ({{selectedMobile?.rom}} GB)
+        ({{selectedMobile?.ram}} GB RAM)</p>
+      <div class="displaySize">
+        <h1 *ngIf="!editToggle"><b>Price: &#x20B9;</b> {{selectedMobile?.price}}</h1>
+        <p *ngIf="editToggle" class="displaySize">
+          <span matPrefix> Price: </span>
+          <mat-form-field class="inputFieldStyle">
+            <input matInput type="text" value="{{selectedMobile?.price}}" formControlName="price"
+              (keypress)="validate($event)" />
+            <mat-error>Enter a price from 1 to 100000</mat-error>
+          </mat-form-field>
+          <span class="linegap"></span>
+        </p>
+      </div>
+      <h3>HighLights :</h3>
+      <ul>
+        <li><b>Brand : </b> {{selectedMobile?.brand}} </li>
+        <li class="descriptionList"><b>Model : </b> {{selectedMobile?.model}} </li>
+        <li class="descriptionList"><b>RAM : </b> {{selectedMobile?.ram}}</li>
+        <li class="descriptionList"><b>ROM : </b> {{selectedMobile?.rom}}</li>
+        <li class="descriptionList"><b>Primary Camera : </b> {{selectedMobile?.primaryCamera}} </li>
+        <li class="descriptionList"><b>Second Camera : </b> {{selectedMobile?.secondaryCamera}} </li>
+        <li class="descriptionList"><b>Battery : </b> {{selectedMobile?.battery}} </li>
+
+      </ul>
+
+      <p class="descriptionList"><b>Location : </b>{{selectedMobile?.location}}</p>
+      <p><b>Liked By <mat-icon class="icon" id="people">people</mat-icon> : </b>{{selectedMobile?.likedBy.length}}
+        People</p>
+
+      <p id="descriptionFont"><b>Description :</b> The {{selectedMobile?.brand}} {{selectedMobile?.model}}
+        {{mobileInformation.mobileDetails}}
+        {{selectedMobile?.primaryCamera}} MP + {{selectedMobile?.secondaryCamera}}
+        {{mobileInformation.mobileDescription}}
+        {{selectedMobile?.battery}} {{mobileInformation.mobileSpecification}} </p>
+    </div>
+  </form>
+</div>

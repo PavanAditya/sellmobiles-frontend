@@ -1,0 +1,53 @@
+<div class='main' fxLayoutAlign="center" fxLayout="row">
+  <mat-card fxLayoutAlign="center" fxFlex="60%" fxFlex.lt-md="80%" fxFlex.lt.sm="80%">
+    <div class="container">
+      <h2>Help us to improve better</h2>
+      <form [formGroup]='contactUsForm' (ngSubmit)='sendFeedback()'>
+        <mat-form-field>
+          <input *ngIf="isLoggedIn()" [readonly]="!editable" placeholder="Name" [value]="user?.firstName" matInput
+            type="text" (keypress)="validate($event)" formControlName="userName">
+
+          <input placeholder="Name" *ngIf="!isLoggedIn()" matInput type="text" (keypress)="validate($event)"
+            formControlName="userName">
+          <mat-error>Enter valid name</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+
+          <input *ngIf="isLoggedIn()" [readonly]="!editable" placeholder="Email Id" [value]="user?.email" matInput
+            type="email" formControlName="email">
+
+          <input placeholder="Email Id" *ngIf="!isLoggedIn()" matInput type="email" formControlName="email">
+          <mat-error>Enter a valid email Address</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Select an option</mat-label>
+          <mat-select (selectionChange)="dropdown()" [(value)]="userChoice" formControlName="choice">
+            <mat-option value='query'>Query</mat-option>
+            <mat-option value='rating'>Rating</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="isQuery()">
+          <textarea matInput formControlName="query" rows="5" placeholder="query">
+      </textarea>
+        </mat-form-field>
+        <div id="rating">
+          <div class="rate" *ngIf="isFeedback()">
+            <input type="radio" id="star5" name="feedBack" value="5" formControlName="feedBack" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="feedBack" value="4" formControlName="feedBack" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="feedBack" value="3" formControlName="feedBack" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="feedBack" value="2" formControlName="feedBack" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="feedBack" value="1" formControlName="feedBack" />
+            <label for="star1" title="text">1 star</label>
+          </div>
+        </div>
+        <button mat-raised-button id="sendButtton">Send</button>
+        <span id="space"></span>
+        <button mat-raised-button color="warn" type="button" class="registerButton" (click)="reset()">Reset</button>
+      </form>
+    </div>
+  </mat-card>
+</div>

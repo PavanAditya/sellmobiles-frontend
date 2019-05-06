@@ -1,0 +1,23 @@
+<img src="assets/home-page/banner.jpg" [ngClass]="stickyFooter()">
+<div fxLayout="row wrap" [ngClass]="disableBackground()" fxLayout.xs="column" fxLayoutAlign="center start"
+  fxLayoutGap="0%">
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+  <mat-card class="card-picture" *ngFor="let mobile of mobilesList">
+    <div id="heart">
+      <mat-icon class="show" *ngIf='!userIsAuthenticated' (click)="showSnackbar()">favorite_border</mat-icon>
+      <mat-icon [ngClass]="toggleLikeClass(mobile)" [matTooltip]="toggleToolTip()" *ngIf='isAuthorized()'
+        (click)="like(mobile)">{{cardText}}</mat-icon>
+      <mat-icon class="hide"></mat-icon>
+    </div>
+    <div id="cursor-container" (click)="viewMobile(mobile)">
+      <div class="img-container">
+        <img class="img" src='{{mobile.image[0]}}' alt="Photo of a mobile" fxLayoutAlign="center center">
+      </div>
+      <mat-card-title class="font" fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="center center">
+        <span><b>{{mobile.brand}} {{mobile.model}}</b></span>
+      </mat-card-title>
+      <span class="hide font"><b>{{mobile.price | currency:"&#8377;"}}</b></span>
+      <span class="show font"><b>Ram: {{mobile.ram}} Rom: {{mobile.rom}}</b></span>
+    </div>
+  </mat-card>
+</div>

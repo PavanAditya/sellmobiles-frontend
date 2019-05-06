@@ -1,0 +1,26 @@
+<div [ngClass]="disableBackground()">
+    <app-spinner *ngIf="showSpinner"></app-spinner>
+</div>
+<div class="body">
+  <p class="title"><b>Uploaded Mobiles</b></p>
+  <div *ngIf="!soldMobilesPresent" class="nomobiles" fxLayout="row wrap" fxLayout.xs="column"
+    fxLayoutAlign="center start" fxLayoutGap="0%">
+    <h4>No mobiles to display</h4>
+  </div>
+  <div *ngIf="soldMobilesPresent">
+    <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center start" fxLayoutGap="0%">
+      <mat-card class="card-picture" *ngFor="let mobile of soldMobiles">
+        <div id="cursor-container" (click)="viewMobile(mobile)">
+          <div class="img-container">
+            <img class="img" src='{{mobile.image[0]}}' alt="Photo of a mobile" fxLayoutAlign="center center">
+          </div>
+          <mat-card-title class="font" fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="center center">
+            <span><b>{{mobile.brand}} {{mobile.model}}</b></span>
+          </mat-card-title>
+          <span class="hide font"><b>{{mobile.price | currency:"&#8377;"}}</b></span>
+          <span class="show font"><b>Ram: {{mobile.ram}} Rom: {{mobile.rom}}</b></span>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

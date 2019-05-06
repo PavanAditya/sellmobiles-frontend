@@ -1,0 +1,129 @@
+<div class='dialogue'>
+  <button class="clearButton" mat-dialog-close>
+    <mat-icon id="iconColor">clear</mat-icon>
+  </button>
+</div>
+<div class="dialog-content">
+  <div *ngIf="!displayLogin" fxFlex="1 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+    <div class="signin" fxLayout="column" fxLayoutAlign="space-evenly centre">
+      <h3 id="signin">Sign In</h3>
+      <div>
+        <form [formGroup]="signInForm" (ngSubmit)="signInValidation()">
+          <div>
+            <mat-form-field class="registerButton">
+              <input type="email" matInput placeholder="Email*" formControlName="email">
+              <mat-error>Enter valid email address</mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field id="passwordSignUp">
+              <input type="{{ typeSignInIcon }}" #passwordSignIn matInput placeholder="Password*"
+                formControlName="password">
+              <mat-icon id="passwordVisible" #passwordVisible matSuffix (click)="visibilitySignInIcon()">
+                {{ hideSignInIcon ? 'visibility_off' : 'visibility_on' }}
+              </mat-icon>
+              <mat-hint>{{authInformation.passwordHint}}</mat-hint>
+              <mat-error>Invalid password</mat-error>
+            </mat-form-field>
+          </div>
+          <p></p>
+          <a (click)="forgotPassword()" id="forgetpass" routerLinkActive="router-link-active">Forgot
+            Password? </a>
+          <p></p>
+          <button mat-raised-button color="primary" class="registerButton" type="submit" (click) ="activateSpinner()"
+            [disabled]="!signInForm.valid">Sign In <span class="spinner" *ngIf="buttonSpinner"> <mat-spinner [diameter]="23"></mat-spinner></span></button>
+          <span class="spaceButtonSignIn"></span>
+          <button mat-raised-button color="warn" class="registerButton" (click)="resetSignIn()">Reset</button>
+        </form>
+      </div>
+      <div class="passportlogin" align="centre">
+        <div class="hr-sect">OR</div>
+        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+          <button (click)='googleLogin()' mat-button class="googlebutton">
+            <img [src]=googleImage class="imagestyle"> Google
+          </button>
+          <span id="spaceButton"></span>
+        </div>
+      </div>
+      <div class="hr-sect">Not Registered Yet ?</div>
+      <button (click)='onDisplayRegister()' mat-raised-button color='primary' class="registrerButton">Register</button>
+    </div>
+  </div>  
+  <div *ngIf="!displayRegister">
+    <div class="signup">
+      <h3 id="signup"> Sign Up </h3>
+      <div>
+        <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+          <div>
+            <mat-form-field class="registerButton">
+              <input placeholder="First Name*" matInput type="text" formControlName="firstName"
+                (keypress)=validateText($event)>
+              <mat-error>Enter valid first name</mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="registerButton">
+              <input placeholder="Last Name*" matInput type="text" formControlName="lastName"
+                (keypress)=validateText($event)>
+              <mat-error>Enter valid last name</mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="registerButton">
+              <input placeholder="Email*" matInput type="email" formControlName="email" />
+              <mat-error>Enter valid email address</mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="registerButton">
+              <input placeholder="Mobile Number*" matInput type="text" formControlName="mobileNumber"
+                (keypress)="validateNumber($event)">
+              <mat-error>Enter valid mobile number</mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="registerButton">
+              <input placeholder="Location*" matInput type="text" (keypress)=validateText($event)
+                formControlName="location" />
+              <mat-hint> {{authInformation.locationHint}} </mat-hint>
+              <mat-error>Enter valid location</mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field id="passwordSignUpForm">
+              <input placeholder="Password*" #password matInput type="{{ typeSignUpIcon }}"
+                formControlName="password" />
+              <mat-icon id="passwordVisibleSignUp" matSuffix (click)="visibilitySignUpIcon()">
+                {{ hideSignUpIcon ? 'visibility_off' : 'visibility_on' }} </mat-icon>
+              <mat-hint>{{authInformation.passwordHint}}</mat-hint>
+              <mat-error>Invalid password</mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="registerButton">
+              <input placeholder="Confirm Password*" matInput type="password" formControlName="confirmPassword" />
+              <mat-error>Password missmatch</mat-error>
+            </mat-form-field>
+          </div>
+        <!--   <div>
+            <section>
+              <re-captcha formControlName="captchaForSignUp"></re-captcha>
+            </section>
+          </div> -->
+          <span class="spaceButtonSignIn"></span>
+          <div fxLayout="row" fxLayoutAlign="space-evenly center">
+            <button mat-raised-button color="warn" class="registerButton" (click)="resetSignUp()">Reset</button>
+            <span id="spaceButton"></span>
+            <button mat-raised-button color="primary" class="registerButton" [disabled]="!signUpForm.valid" (click)="activateSpinner()"
+              type="submit">Register <span class="spinner" *ngIf="buttonSpinner"> <mat-spinner [diameter]="25">
+              </mat-spinner></span></button>
+          </div>
+        </form>
+      </div>
+      <span id='spaceBetweenSignIn'></span>
+      <div class="hr-sect">Already Have Account</div>
+      <button (click)="onDisplayLogin()" mat-raised-button color="primary" class="registerButton">Login</button>
+    </div>
+  </div>
+</div>
+

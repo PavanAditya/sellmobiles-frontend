@@ -1,0 +1,40 @@
+<div class="mat-elevation-z8" fxHide.gt-sm>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>filter_list</mat-icon><span id="filterText">Filters</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-filter></app-filter>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div [ngClass]="disableBackground()">
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+</div>
+<div class="search-container" fxLayout="row">
+  <div class="filter" fxHide.sm fxHide.xs>
+    <router-outlet></router-outlet>
+  </div>
+  <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center start" fxLayoutGap="0%">
+    <mat-card class="card-picture" *ngFor="let mobile of mobileList">
+      <div id="heart">
+        <mat-icon class="show" *ngIf='!userIsAuthenticated' (click)="showSnackbar()">favorite_border</mat-icon>
+        <mat-icon [ngClass]="toggleLikeClass(mobile)" [matTooltip]="toggleToolTip()" *ngIf='isAuthorized()'
+          (click)="like(mobile)">{{cardText}}</mat-icon>
+        <mat-icon class="hide"></mat-icon>
+      </div>
+      <div id="cursor-container" (click)="viewMobile(mobile)">
+        <div class="img-container">
+          <img class="img" src='{{mobile.image[0]}}' alt="Photo of a mobile" fxLayoutAlign="center center">
+        </div>
+        <mat-card-title class="font" fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="center center">
+          <span><b>{{mobile.brand}} {{mobile.model}}</b></span>
+        </mat-card-title>
+        <span class="hide font"><b>{{mobile.price | currency:"&#8377;"}}</b></span>
+        <span class="show font"><b>Ram: {{mobile.ram}} Rom: {{mobile.rom}}</b></span>
+      </div>
+    </mat-card>
+  </div>
+</div>

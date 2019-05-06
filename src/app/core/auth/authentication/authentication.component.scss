@@ -1,0 +1,229 @@
+
+.signup {
+  width: 435px;
+}
+#signup {
+  text-align: center;
+  margin-top: -10px;
+}
+.signin {
+  width: 452px;
+}
+#signin {
+  text-align: center;
+  margin-top: 0px;
+}
+mat-form-field {
+  width: 100%;
+}
+
+.googlebutton {
+  width: 50%;
+  margin-left: 12%;
+  background-color: white;
+  color: #0c0909;
+  border-style: groove;
+  font-size: 17px;
+}
+
+.imagestyle {
+  width: 15%;
+  background-color: white;
+}
+
+#signButton {
+  margin-left: 15px;
+}
+
+.registerButton {
+  width: 100%;
+}
+::ng-deep .mat-spinner circle {
+  stroke: white;
+}
+.spinner {
+  float: right;
+  margin-top: 7px;
+  position: absolute;
+  margin-left: 15px;
+}
+#spaceButton {
+  margin-right: 10px;
+}
+
+#passwordVisible {
+  margin-left: 95%;
+  cursor: pointer;
+}
+
+#forgetpass {
+  cursor: pointer;
+  padding-bottom: 15px;
+  color: blue;
+  font-weight: 400;
+}
+h3 {
+  font-family: 'Rubik', sans-serif;
+}
+
+.spaceButtonSignIn {
+  margin-right: 10px;
+  padding-top: 10px;
+}
+
+#passwordSignUp {
+  width: 95%;
+  cursor: pointer;
+}
+#passwordSignUpForm {
+  width: 95%;
+  cursor: pointer;
+  padding-top: 12px;
+}
+
+.hr-sect {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.35);
+  margin: 8px, 0px;
+  margin-bottom: 7px;
+  margin-top: 7px;
+  padding-top: 4px;
+}
+.hr-sect::before,
+.hr-sect::after {
+  content: "";
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 0.35);
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  margin: 0px 8px;
+}
+.dialogue {
+  float: right;
+  padding-left: 99%;
+  margin-right: 0%;
+  height: initial;
+}
+.clearButton {
+  position: absolute;
+  margin-left: 25px;
+  margin-top: -25px;
+  background: transparent;
+  color: none;
+  border: none;
+  outline: none;
+}
+#captcha {
+  text-align: -webkit-center;
+}
+#iconColor:hover {
+  cursor: pointer;
+}
+#iconColor {
+  color: red;
+  font-weight: bold;
+  width: 25px;
+}
+
+
+@media only screen and (min-width: 320px) {
+  .signin {
+    width: 213px
+  }
+  .signup {
+    width: 205px;
+  }
+  #captcha {
+    transform:scale(0.7);transform-origin:0;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  .signin {
+    width: 241px;
+  }
+  .signup {
+    width: 232px
+  }
+  #captcha {
+    transform:scale(0.8);transform-origin:0;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .signin {
+    width: 247px;
+  }
+  .signup {
+    width: 240px;
+  }
+  #captcha {
+    transform:scale(0.8);transform-origin:0;
+  }
+}
+@media only screen and (min-width: 411px) {
+  .signin {
+    width: 280px;
+  }
+  .signup {
+    width: 271px;
+  }
+  #captcha {
+    transform:scale(0.9);transform-origin:0;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .signin {
+    width: 286px
+  }
+  .signup {
+    width: 285px;
+  }
+  #captcha {
+    transform:scale(0.9);transform-origin:0;
+  }
+}
+@media only screen and (min-width: 530px) {
+  .signin {
+    width: 376px;
+  }
+  .signup {
+    width: 375px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .signin {
+    width: 416px;
+  }
+  .signup {
+    width: 415px;
+    height: 700px;
+  }
+}
+
+::ng-deep .mat-dialog-container {
+  height: auto;
+}
+
+::ng-deep .mat-dialog-container::-webkit-scrollbar {
+  width: 10px;
+  height: 0px;
+  border-radius: 20px;
+}
+::ng-deep .mat-dialog-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::ng-deep .mat-dialog-container::-webkit-scrollbar-thumb {
+  background-color: #07000052;
+  outline: 1px solid rgb(0, 0, 0);
+  width: 9px;
+  border-radius: 20px;
+}
+::ng-deep .mat-dialog-container::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 20px;
+}

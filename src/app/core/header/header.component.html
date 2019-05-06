@@ -1,0 +1,96 @@
+<nav class="navbar">
+  <div fxHide.gt-sm>
+    <button mat-icon-button (click)="onToggleSideNav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+  <div>
+    <a>
+      <img src="assets/logo/site-logo.png" (click)="navigate()" id="logo" matTooltip="Home" />
+    </a>
+  </div>
+
+  <span class="gap"></span>
+  <div id="searches">
+    <ul fxLayout="row" fxLayoutGap="80px" class="navigation-items">
+      <li id="searchCity">
+        <mat-form-field id="locationBar" appearance="outline">
+          <mat-select placeholder="Location" class="dropdown" matTooltip="Search By Location"
+            (selectionChange)="searchByLocation()" [(value)]="selectedCity">
+            <mat-option *ngFor="let city of cities" [value]="city">
+              {{ city }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </li>
+
+      <li id="searchBrand">
+        <mat-form-field id="searchbar" appearance="outline">
+          <input type="text" placeholder="Search by brand" matInput #search [formControl]="myControl"
+            [matAutocomplete]="auto" matTooltip="Search By Brand" (keyup.enter)="searchByBrand(search.value)"
+            [value]="selectedBrand">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let brand of filteredOptions | async" [value]="brand"
+              (click)="searchByBrand(search.value)">
+              {{brand}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </li>
+
+      <mat-icon (click)="searchByBrand(search.value)" id="search">search</mat-icon>
+    </ul>
+  </div>
+  <div fxFlex fxLayout="row" fxLayoutAlign="end" fxHide.xs fxHide.sm>
+    <ul class="navigation-items">
+      <li>
+        <div class="loginprofilebutton">
+          <span class="space"></span>
+          <button mat-raised-button (click)="openDialog()" *ngIf="!userIsAuthenticated" id="loginButton">
+            Login | Signup
+          </button>
+
+          <span id="profileName" *ngIf="userIsAuthenticated">{{ user?.firstName | helloGreeting:"Hello" }}</span>
+          <a id="profilebutton" [matMenuTriggerFor]="menu" *ngIf="userIsAuthenticated" #menuTrigger="matMenuTrigger"
+            (mouseenter)="openMenu()">
+            <img src="assets/header/profile.png" id="profile" />
+          </a>
+          <span *ngIf="userIsAuthenticated"></span>
+          <mat-menu #menu="matMenu" overlapTrigger="false">
+            <span (mouseleave)="closeMenu()">
+              <button mat-menu-item (click)="loadProfile()">
+                <mat-icon (mouseleave)="closeMenu()">account_circle</mat-icon>
+                <span>My Profile</span>
+              </button>
+              <button mat-menu-item (click)='uploadedMobiles()'>
+                <mat-icon>stay_current_portrait</mat-icon>
+                <span>Mobiles Uploaded</span>
+              </button>
+              <button mat-menu-item (click)="openChat()">
+                <mat-icon>chat</mat-icon>
+                <span>Chat</span>
+              </button>
+              <button mat-menu-item (click)='history()'>
+                <mat-icon>toc</mat-icon>
+                <span>History</span>
+              </button>
+              <button mat-menu-item (click)="wishlist()">
+                <mat-icon>favorite</mat-icon>
+                <span>My Wishlist</span>
+              </button>
+              <button mat-menu-item (click)="logOut()">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+              </button>
+            </span>
+          </mat-menu>
+          <button *ngIf="userIsAuthenticated" mat-mini-fab color="primary" id="addProduct" matTooltip="Upload Mobile"
+            (click)="addMobile()">
+            +
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

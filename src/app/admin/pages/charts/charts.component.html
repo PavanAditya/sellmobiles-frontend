@@ -1,0 +1,54 @@
+<div fxLayout="row wrap" fxFlex fxLayout.lt-md="column">
+  <div class="mb-20" fxLayout="row" fxFlex fxLayout.lt-md="column" fxLayoutGap="20px">
+    <div fxFlex>
+      <mat-card fxFlex>
+        <mat-card-header>
+          <mat-card-title>Total Mobiles Uploaded Per Brand</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+            [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div fxFlex>
+      <mat-card fxFlex>
+        <mat-card-header>
+          <mat-card-title>Mobiles Uploaded Per Location</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <canvas baseChart [colors]="doughnutColors" [data]="doughnutChartData" [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType">
+          </canvas>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="mb-20" fxLayout="row" fxFlex fxLayout.lt-md="column" fxLayoutGap="20px">
+    <div fxFlex>
+      <mat-card fxFlex>
+        <mat-card-header>
+          <mat-card-title>Total Number Of Mobiles Per Brand</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <canvas baseChart [colors]="polarareaColors" [data]="polarAreaChartData"
+            [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType" class="chartClass">
+          </canvas>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div fxFlex>
+      <mat-card fxFlex>
+        <mat-card-header>
+          <mat-card-title>Number Of Likes Per Brand</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <canvas baseChart [colors]="piechartColors" [data]="pieChartData"
+            [labels]="pieChartLabels" [chartType]="pieChartType" class="chartClass">
+          </canvas>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

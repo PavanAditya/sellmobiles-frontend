@@ -1,0 +1,124 @@
+<div class="mobileform">
+  <mat-horizontal-stepper labelPosition="bottom" class="formstyle" linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup" #firstReset>
+        <ng-template matStepLabel>
+          <h3>Details</h3>
+        </ng-template>
+        <mat-form-field>
+          <mat-label>Select Brand*</mat-label>
+          <mat-select (selectionChange)="brand()" [(value)]="selectedBrand" formControlName="brand">
+            <mat-option *ngFor="let brand of brands" [value]="brand">
+              {{ brand.brand }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <mat-label>Select Model*</mat-label>
+          <mat-select formControlName="model">
+            <mat-option *ngFor="let model of model" [value]="model">
+              {{ model }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <mat-select placeholder="Location*" formControlName="location">
+            <mat-option *ngFor="let city of cities" [value]="city">
+              {{city}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <input matInput type="number" placeholder="Price*" formControlName="price" (keypress)="validate($event)">
+          <mat-error>Enter price between 1 to 100000</mat-error>
+        </mat-form-field>
+        <div>
+          <button color="warn" mat-raised-button (click)="firstReset.reset()">Reset</button>
+          <span class="gap"></span>
+          <button color="basic" (click)="saveFirstForm()" color="primary" mat-raised-button matStepperNext
+            [disabled]="!firstFormGroup.valid">Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <div>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" id="specification" #secondReset>
+          <ng-template matStepLabel>
+            <h3>Specification</h3>
+          </ng-template>
+          <mat-form-field>
+            <mat-select placeholder="RAM*" formControlName="ram">
+              <mat-option *ngFor="let item of ram" [value]="item">
+                {{item}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br />
+          <mat-form-field>
+            <mat-select placeholder="ROM*" formControlName="rom">
+              <mat-option *ngFor="let item of rom" [value]="item">
+                {{item}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br />
+          <mat-form-field>
+            <input matInput type="number" placeholder="Primary Camera(px)*" formControlName="primaryCamera">
+            <mat-error>Enter value between 0-30 px</mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field>
+            <input matInput type="number" placeholder="Secondary Camera(px)*" formControlName="secondaryCamera">
+            <mat-error>Enter value between 0-20 px</mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field>
+            <input matInput type="number" placeholder="Battary(mAH)*" formControlName="battery">
+            <mat-error>Between 1000-6000 mAh</mat-error>
+          </mat-form-field>
+          <p></p>
+          <div>
+            <button color="basic" mat-raised-button matStepperPrevious>Back</button>
+            <span class="gap"></span>
+            <button color="warn" mat-raised-button type="reset" (click)="secondReset.reset()">Reset</button>
+            <span class="gap"></span>
+            <button color="primary" (click)="saveSecondForm()" mat-raised-button matStepperNext
+              [disabled]="!secondFormGroup.valid">Next</button>
+          </div>
+        </form>
+      </mat-step>
+    </div>
+
+    <mat-step>
+      <form align="right">
+        <ng-template matStepLabel>
+          <h3>Images</h3>
+        </ng-template>
+        <label class="btn-upload">
+          <input type="file" multiple=true (change)="importImages($event)">
+          <button class="btn"><img src="assets/images/upload-image-icon.ico"></button>
+
+        </label>
+        <div class="progressBar">
+          <mat-progress-bar class="progressbar" mode="determinate" [value]="uploadPercentages | async" #bar>
+          </mat-progress-bar>
+        </div>
+        <p class="space"></p>
+        <button color="basic" mat-raised-button matStepperPrevious>Back</button>
+        <span class="gap"></span>
+        <button (click)="stepper.reset()" mat-raised-button type="reset" color="warn" (click)="clear()">Reset</button>
+        <p class="space"></p>
+      </form>
+      <button mat-raised-button color="primary" class="submitbutton" (click)="saveForm()"
+        [disabled]="isCorrect() || bar.value !== 100" type="submit">Post</button>
+
+      <div class="imgDiv">
+        <img *ngFor="let url of dispUrls" [src]="url" class="uploaded-images">
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

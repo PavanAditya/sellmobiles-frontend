@@ -1,0 +1,98 @@
+<div id="main">
+  <div id="leftDiv">
+    <div id="matProfile">
+      <div id="image">
+        <img id="profileImage" src="assets/images/user.png">
+        <h1 class="name">
+          {{ user?.firstName }} {{ user?.lastName }}
+        </h1>
+      </div>
+      <div id="content">
+        <form [formGroup]="userForm" (ngSubmit)="updateProfile()">
+          <mat-card class="detailsclass">
+            <div align="center">
+              <div>
+                <p class="displaySize"><b>Username: </b> <span class="linegapName"></span>{{ user?.userName }}</p>
+              </div>
+              <div>
+                <p class="displaySize"><b>Email Id:</b> <span class="linegapEmail"></span>{{ user?.email }}</p>
+              </div>
+              <div>
+                <p *ngIf="!editToggle" class="displaySize">
+                  <b>First Name: </b><span class="linegapFirstName"></span> {{ user?.firstName }}
+                </p>
+                <p *ngIf="editToggle" class="displaySize">
+                  <span matPrefix><b>First name:</b> <span class="linegapFirstName"></span></span>
+                  <mat-form-field class="inputFieldStyle">
+                    <input matInput type="input" value="{{ user?.firstName }}" formControlName="firstName" />
+                    <mat-error>Enter a valid First Name</mat-error>
+                  </mat-form-field>
+                  <span class="linegap"></span>
+                </p>
+              </div>
+              <div>
+                <p *ngIf="!editToggle" class="displaySize">
+                  <b>Last Name: </b> <span class="linegapLastName"></span>{{ user?.lastName }}
+                </p>
+                <p *ngIf="editToggle" class="displaySize">
+                  <span matPrefix><b>Last name:</b> <span class="linegapLastName"></span></span>
+                  <mat-form-field class="inputFieldStyle">
+                    <input matInput type="input" value="{{ user?.lastName }}" formControlName="lastName" />
+                    <mat-error>Enter a valid last name</mat-error>
+                  </mat-form-field>
+                </p>
+              </div>
+              <div>
+                <p *ngIf="!editToggle" class="displaySize">
+                  <b>Mobile No: </b> <span class="linegapNumber"></span>{{ user?.mobileNumber }}
+                </p>
+                <p *ngIf="editToggle" class="displaySize">
+                  <span matPrefix><b>Mobile No:</b> <span class="linegapNumber"></span></span>
+                  <mat-form-field class="inputFieldStyle">
+                    <input matInput type="input" value="{{ user?.mobileNumber }}" formControlName="mobileNumber"
+                      (keypress)="validate($event)" />
+                    <mat-error>Enter a valid Mobile Number</mat-error>
+                  </mat-form-field>
+                  <span class="linegap"></span>
+                </p>
+              </div>
+              <div>
+                <p *ngIf="!editToggle" class="displaySize">
+                  <b>Location: </b> <span class="linegapLocation"></span>{{ user?.location }}
+                </p>
+                <p *ngIf="editToggle" class="displaySize">
+                  <span matPrefix><b>Location:</b> <span class="linegapLocation"></span></span>
+                  <mat-form-field class="inputFieldStyle">
+                    <input matInput type="input" value="{{ user?.location }}" formControlName="location" />
+                    <mat-error>Enter a valid Location</mat-error>
+                  </mat-form-field>
+                </p>
+              </div>
+              <button (click)="editProfile()" type="button" class="updateButton" *ngIf="!editToggle" mat-raised-button
+                color="primary">
+                <mat-icon>create</mat-icon>
+                Edit Profile
+              </button>
+              <span id="spaceButtons"></span>
+              <button (click)="deleteProfile()" type="button" class="cancelButton" *ngIf="!editToggle" mat-raised-button
+                color="warn">
+                <mat-icon>delete_sweep</mat-icon>
+                Delete Profile
+              </button>
+              <div class="linegap"></div>
+              <button type="submit" *ngIf="editToggle" class="updateButton"
+                [disabled]="!userForm.valid && !updateDisabled" mat-raised-button color="primary">
+                Update
+              </button>
+              <span id="spaceButtons"></span>
+              <button (click)="cancelEdit()" *ngIf="editToggle" class="cancelButton" mat-raised-button color="warn">
+                Cancel
+              </button>
+            </div>
+          </mat-card>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
