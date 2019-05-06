@@ -1,4 +1,4 @@
-## Sell Mobiles
+# Sell Mobiles
 
 This is a site where users can find second hand mobiles on sale and can directly contact the sellers to buy the mobile. The users can also post mobiles to be sold on the site. This site gives the facility to chat directly with the seller so as to negotiate accordingly. This easy to handle site makes the process easy and safe for the seller as well as the buyer.
 The admin plays a role in administrating the site data, functionality and flow. The admin has the authority to edit or change the features on the site.
@@ -7,7 +7,7 @@ When a seller would like to post a mobile , he/she needs to sign in to get redir
 The awesome UI of the site makes it easy for the user to access information from the site as well as to sell the second hand mobile directly to any other user with a simple step i.e. The chat.
 
 
-# Site access and usage
+## Site access and usage
 
 -> login and sign up dialog boxes appear for login/signup to the site.
 -> mobiles can be viewd and liked from the landing page
