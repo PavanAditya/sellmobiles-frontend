@@ -1,7 +1,7 @@
 export const mobileInformation = {
   cities: ['India', 'Bangalore', 'Hyderabad', 'Chennai', 'Mumbai', 'Delhi', 'Kolkata'],
   userCities: ['Bangalore', 'Hyderabad', 'Chennai', 'Mumbai', 'Delhi', 'Kolkata'],
-  brands: ['Samsung', 'Mi', 'Honor', 'Apple', 'Sony'],
+  brands: ['Samsung', 'Mi', 'Honor', 'Apple', 'One Plus', 'Sony', 'Oppo', 'Vivo'],
   ram: [2, 3, 4, 6, 8],
   rom: [4, 8, 16, 32, 64, 128],
   mobileDetails : `boasts a
