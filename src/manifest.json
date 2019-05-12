@@ -1,12 +1,17 @@
 {
   "name": "sell-mobile",
   "short_name": "sell-mobile",
-  "theme_color": "#1976d2",
+  "theme_color": "#af2a2a",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "icons": [
+    {
+      "src": "assets/logo/index-logo.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
     {
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
