@@ -12,6 +12,6 @@ export const environment = {
       projectId: 'sellmobile-cbdc5',
       storageBucket: 'sellmobile-cbdc5.appspot.com',
   },
-  siteKey: '6Ld8R5wUAAAAAMvg0VtTGOvvVEmTbkxOOv7ZC8d8'
+  siteKey: '6LeaDKMUAAAAAE8qPTvW6BnDeRyZPTp-HdZWeHHY'
 };
 
