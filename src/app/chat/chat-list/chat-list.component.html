@@ -1,8 +1,9 @@
 <ul class="user-list">
   <div class="username-tab" *ngFor="let user of chatListUsers">
-    <li (click)="selectedUser(user)" [class.active]="isUserSelected(user.id)">
-      {{ user?.firstName }}
-      <span [ngClass]="user.online === 'Y' ? 'online' : 'offline'"> </span> <br>
+    <li class="display-name" (click)="selectedUser(user)" [class.active]="isUserSelected(user.id)">
+      <span *ngIf="!mobile">{{ user?.firstName }}</span>
+      <span *ngIf="mobile">{{ (user?.firstName.length>6)? (user?.firstName | slice:0:6)+'...':(user?.firstName) }}</span>
+      <span [ngClass]="user.online === 'Y' ? 'online' : 'offline'"> </span>
     </li>
   </div>
 </ul>

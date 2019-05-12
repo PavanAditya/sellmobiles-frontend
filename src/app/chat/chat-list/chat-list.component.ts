@@ -13,6 +13,7 @@ import { AuthService } from '../../core/auth/auth.service';
 })
 export class ChatListComponent implements OnInit {
 
+  public mobile = false;
   public chatListLoading = true;
   public userId: string = null;
   public chatListUsers: User[] = [];
@@ -39,6 +40,10 @@ export class ChatListComponent implements OnInit {
       }
     });
     this.loadingChatListMessage();
+    if (window.screen.width <= 720) { // 768px portrait
+      this.mobile = true;
+    }
+    window.onresize = () => this.mobile = window.innerWidth <= 720;
   }
 
   public loadingChatListMessage(): void {
