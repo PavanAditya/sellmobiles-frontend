@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { MobileModule } from './mobile/mobile.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AdminGuard } from './core/guards/admin.guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +29,8 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })
