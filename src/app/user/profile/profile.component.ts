@@ -11,7 +11,6 @@ import {
   ProfileDeleteConfirmationComponent
 } from '../../shared/components/profile-delete-confirmation/profile-delete-confirmation.component';
 
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -30,7 +29,7 @@ export class ProfileComponent implements OnInit {
     private snackBarService: SnackbarService,
     private authService: AuthService,
     private dialog: MatDialog
-  ) { }
+  ) {}
 
   ngOnInit() {
     // ? Adding validators for profile.
@@ -59,26 +58,36 @@ export class ProfileComponent implements OnInit {
 
   // ? Function for updating the profile.
   public updateProfile() {
-    this.userForm.value.firstName === ''
-      ? (this.user.firstName = this.user.firstName)
-      : (this.user.firstName = this.userForm.value.firstName);
-    this.userForm.value.lastName === ''
-      ? (this.user.lastName = this.user.lastName)
-      : (this.user.lastName = this.userForm.value.lastName);
-    this.userForm.value.mobileNumber === ''
-      ? (this.user.mobileNumber = this.user.mobileNumber)
-      : (this.user.mobileNumber = this.userForm.value.mobileNumber);
-    this.userForm.value.location === ''
-      ? (this.user.location = this.user.location)
-      : (this.user.location = this.userForm.value.location);
-    this.user.token = this.userName;
-    this.userService.updateUserDetails(this.user).subscribe(response => {
-      if (response.hasOwnProperty('data')) {
-        this.user = response[`data`];
-      }
-    });
+    if (this.checkValuesEmpty()) {
+      this.snackBarService.openSnackBar(
+        'Editing cant be done, Some Fields Missing',
+        'red-snackbar'
+      );
+    } else {
+      this.userForm.value.firstName === ''
+        ? (this.user.firstName = this.user.firstName)
+        : (this.user.firstName = this.userForm.value.firstName);
+      this.userForm.value.lastName === ''
+        ? (this.user.lastName = this.user.lastName)
+        : (this.user.lastName = this.userForm.value.lastName);
+      this.userForm.value.mobileNumber === ''
+        ? (this.user.mobileNumber = this.user.mobileNumber)
+        : (this.user.mobileNumber = this.userForm.value.mobileNumber);
+      this.userForm.value.location === ''
+        ? (this.user.location = this.user.location)
+        : (this.user.location = this.userForm.value.location);
+      this.user.token = this.userName;
+      this.userService.updateUserDetails(this.user).subscribe(response => {
+        if (response.hasOwnProperty('data')) {
+          this.user = response[`data`];
+        }
+      });
+      this.snackBarService.openSnackBar(
+        'User Profile Updated',
+        'green-snackbar'
+      );
+    }
     this.editToggle = !this.editToggle;
-    this.snackBarService.openSnackBar('User Profile Updated', 'green-snackbar');
   }
 
   // ? Restricting user to only enter the numbers.
@@ -100,5 +109,23 @@ export class ProfileComponent implements OnInit {
   // ? Function for deleting the profile.
   public deleteProfile() {
     this.dialog.open(ProfileDeleteConfirmationComponent, {});
+  }
+
+  public checkValuesEmpty(): boolean {
+    if (this.user.mobileNumber === null && this.userForm.value.mobileNumber === '' ) {
+      this.snackBarService.openSnackBar(
+        'Mobile Number cant be empty',
+        'red-snackbar'
+      );
+      return true;
+    }
+    if (this.user.location === null && this.userForm.value.location === '') {
+      this.snackBarService.openSnackBar(
+        'Location cant be empty',
+        'red-snackbar'
+      );
+      return true;
+    }
+    return false;
   }
 }
