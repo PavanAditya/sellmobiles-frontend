@@ -8,6 +8,11 @@
   "start_url": "/",
   "icons": [
     {
+      "src": "assets/logo/Mobile-Smartphone-icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
       "src": "assets/logo/index-logo.1.png",
       "sizes": "72x72",
       "type": "image/png"
