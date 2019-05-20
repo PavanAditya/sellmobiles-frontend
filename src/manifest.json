@@ -13,34 +13,9 @@
       "type": "image/png"
     },
     {
-      "src": "assets/logo/docubot.gif",
-      "sizes": "322x294",
-      "type": "image/gif"
-    },
-    {
-      "src": "assets/home-page/banner.jpg",
-      "sizes": "1825x249",
-      "type": "image/jpg"
-    },
-    {
       "src": "assets/logo/site-logo.png",
       "sizes": "200x200",
       "type": "image/png"
     },
-    {
-      "src": "assets/logo/logo.png",
-      "sizes": "113x115",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/header/add-product.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/header/profile.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    }
   ]
 }
