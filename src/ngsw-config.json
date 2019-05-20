@@ -6,8 +6,8 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "assets/logo/docubot.gif",
           "/assets/logo/index-logo.png",
+          "assets/logo/docubot.gif",
           "assets/home-page/banner.jpg",
           "assets/third-party/facebook.png",
           "assets/third-party/github.png",
