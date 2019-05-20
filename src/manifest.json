@@ -23,31 +23,6 @@
       "type": "image/jpg"
     },
     {
-      "src": "assets/third-party/facebook.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/third-party/github.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/third-party/google.png",
-      "sizes": "200x200",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/third-party/linkedin.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/third-party/twitter.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
       "src": "assets/logo/site-logo.png",
       "sizes": "200x200",
       "type": "image/png"
