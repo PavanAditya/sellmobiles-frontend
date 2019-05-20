@@ -17,3 +17,4 @@ The awesome UI of the site makes it easy for the user to access information from
 -> clicking on chat with seller option enables a private chat window with that particular user
 -> the remaining profile drop down tabs provide various informations regarding the user
 -> the admin panel is accessed by adding "/admin" route at the end of the base url
+-> Any queries just interact with the chat-bot available below to right. It can answer you queries.
