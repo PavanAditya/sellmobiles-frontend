@@ -13,6 +13,11 @@
       "type": "image/png"
     },
     {
+      "src": "assets/logo/docubot.gif",
+      "sizes": "322x294",
+      "type": "image/gif"
+    },
+    {
       "src": "assets/home-page/banner.jpg",
       "sizes": "1825x249",
       "type": "image/jpg"
