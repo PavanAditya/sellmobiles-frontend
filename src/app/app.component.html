@@ -1,5 +1,8 @@
 <router-outlet *ngIf="isAdmin"></router-outlet>
-
+<div>
+  <img [style.marginTop.px]="innerHeight-135" [style.marginLeft.px]="innerWidth-165"
+  class="chatbot-icon" (click)="chatBotDialog()" src="../assets/logo/docubot.gif" alt="chatbot icon">
+</div>
 <mat-sidenav-container *ngIf="!isAdmin">
   <mat-sidenav #sideNav role='navigation'>
     <mat-nav-list>

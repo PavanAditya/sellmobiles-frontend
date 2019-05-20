@@ -12,6 +12,9 @@ export const environment = {
       projectId: 'sellmobile-cbdc5',
       storageBucket: 'sellmobile-cbdc5.appspot.com',
   },
-  siteKey: '6LeaDKMUAAAAAMPN8GzbUKe5kUTODEreeXs8c7XG'
+  siteKey: '6LeaDKMUAAAAAMPN8GzbUKe5kUTODEreeXs8c7XG',
+  dialogflow: {
+    angularBot: 'fe36288330dd447c93aa2ebc4bd74cbe'
+  }
 };
 

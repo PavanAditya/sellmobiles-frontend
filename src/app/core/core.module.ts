@@ -14,6 +14,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 // import { environment } from 'src/environments/environment';
 import { environment } from '../../environments/environment.prod';
 import { DetailsInMobileComponent } from './about/details-in-mobile/details-in-mobile.component';
+import { ChatBotComponent } from './chat-bot/chat-bot.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { DetailsInMobileComponent } from './about/details-in-mobile/details-in-m
     HeaderComponent,
     PageNotFoundComponent,
     SideNavComponent,
-    DetailsInMobileComponent
+    DetailsInMobileComponent,
+    ChatBotComponent
   ],
   imports: [
     SharedModule,
@@ -37,7 +39,8 @@ import { DetailsInMobileComponent } from './about/details-in-mobile/details-in-m
   exports : [
     HeaderComponent,
     FooterComponent,
-    SideNavComponent
+    SideNavComponent,
+    ChatBotComponent
   ],
   providers: [
     {
@@ -46,6 +49,9 @@ import { DetailsInMobileComponent } from './about/details-in-mobile/details-in-m
         siteKey: environment.siteKey,
       } as RecaptchaSettings,
     }
+  ],
+  entryComponents: [
+    ChatBotComponent
   ]
 })
 export class CoreModule { }

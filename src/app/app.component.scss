@@ -1,3 +1,10 @@
 mat-sidenav {
   width: 230px;
 }
+
+.chatbot-icon {
+  position: fixed;
+  height: 125px;
+  z-index: 100;
+  cursor: pointer;
+}

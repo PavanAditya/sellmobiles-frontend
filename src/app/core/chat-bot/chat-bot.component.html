@@ -1,0 +1,24 @@
+<div class="main">
+  <mat-icon class="close-dialog" (click)="closeDialogBox()">close</mat-icon>
+  <h2 align="center">
+    Ask <b><i>DUDE</i></b> about
+    <p><b><i>Sell Mobiles</i></b></p>
+  </h2>
+  <div class="room" align="center">
+    <div *ngFor="let message of messages | async">
+
+      <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                      'to':   message.sentBy === 'user' }">
+        {{ message.content }}
+      </div>
+
+    </div>
+    <div align="center">
+      <mat-form-field>
+        <mat-label for="nameField">Your Message</mat-label>
+        <input matInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+        <button matSuffix (click)="sendMessage()" mat-raised-button color="primary">Send</button>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,7 @@ import { MobileModule } from './mobile/mobile.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AdminGuard } from './core/guards/admin.guard';
+import { ChatBotComponent } from './core/chat-bot/chat-bot.component';
 
 @NgModule({
   declarations: [AppComponent],

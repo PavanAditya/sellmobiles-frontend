@@ -1,16 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-@import './styles/main';
-@import './styles/responsive';
+@import "./styles/main";
+@import "./styles/responsive";
 
 body {
   margin: 0;
   height: 100%;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 html {
   height: 100%;
 }
-
 
 .red-snackbar {
   background-color: rgba(196, 5, 5, 0.966);
