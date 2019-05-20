@@ -6,7 +6,11 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
+<<<<<<< HEAD
           "/assets/logo/index-logo.png",
+=======
+          "assets/logo/index-logo.1.png",
+>>>>>>> master
           "assets/logo/docubot.gif",
           "assets/home-page/banner.jpg",
           "assets/third-party/facebook.png",
