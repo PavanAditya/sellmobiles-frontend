@@ -23,7 +23,7 @@ export class ConversationComponent implements OnInit {
   public messageForm: FormGroup;
   public loadingConverstionText: string;
   private userId: string = null;
-  @ViewChild('messageThread') private messageContainer: ElementRef;
+  @ViewChild('messageThread', { static: false }) private messageContainer: ElementRef;
 
   constructor(
     private chatService: ChatService,

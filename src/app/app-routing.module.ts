@@ -11,10 +11,10 @@ import { MobileListComponent } from './mobile/mobile-list/mobile-list.component'
 
 const routes: Routes = [
   // ? Lazy Loaded Modules
-  { path: 'mobile', loadChildren: './mobile/mobile.module#MobileModule' },
-  { path: 'user', loadChildren: './user/user.module#UserModule' },
-  { path: 'chat', loadChildren: './chat/chat.module#ChatModule' },
-  { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
+  { path: 'mobile', loadChildren: () => import('./mobile/mobile.module').then(m => m.MobileModule) },
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
+  { path: 'chat', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule) },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
 
   // ? Imported core functionality components
   { path: 'authentication', component: AuthenticationComponent, canActivate: [NoAuthGuard] },

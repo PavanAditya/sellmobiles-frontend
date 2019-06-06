@@ -18,17 +18,17 @@ const routes: Routes = [
       },
       {
         path: 'dashboard',
-        loadChildren: './pages/dashboard/dashboard.module#DashboardModule',
+        loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule),
         canActivate: [AdminGuard]
       },
       {
         path: 'charts',
-        loadChildren: './pages/charts/charts.module#ChartsModule',
+        loadChildren: () => import('./pages/charts/charts.module').then(m => m.ChartsModule),
         canActivate: [AdminGuard]
       },
       {
         path: 'registered-users',
-        loadChildren: './pages/registered-users/registered-users.module#RegisteredUsersModule',
+        loadChildren: () => import('./pages/registered-users/registered-users.module').then(m => m.RegisteredUsersModule),
         canActivate: [AdminGuard]
       }]
   },
