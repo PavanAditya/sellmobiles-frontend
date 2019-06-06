@@ -13,8 +13,8 @@ export class DashboardComponent implements OnInit {
   public displayedColumns = tableData.displayedColumns;
   public dataSource: MatTableDataSource<UserResponse>;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
 
   public registeredUsersCount: number;
   public onlineUsersCount: number;

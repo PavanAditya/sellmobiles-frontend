@@ -24,7 +24,7 @@ import { mobileInformation } from '../../core/mocks/mobile-information.mock';
   styleUrls: ['./mobile-detail.component.scss']
 })
 export class MobileDetailComponent implements OnInit {
-  @ViewChild('expandedImg') expandedImg: ElementRef;
+  @ViewChild('expandedImg', { static: true }) expandedImg: ElementRef;
   public user: User;
   public selectedUser: User;
   public selectedMobile: Mobile;

@@ -20,7 +20,10 @@
     "@angular/fire": "^5.2.1",
     "@angular/flex-layout": "^7.0.0-beta.24",
     "@angular/forms": "~8.0.0",
+<<<<<<< HEAD
     "@angular/http": "^7.2.15",
+=======
+>>>>>>> master
     "@angular/material": "~7.3.5",
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
@@ -42,7 +45,11 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@angular-devkit/build-angular": "~0.800.1",
+=======
+    "@angular-devkit/build-angular": "~0.800.0",
+>>>>>>> master
     "@angular/cli": "^8.0.1",
     "@angular/compiler-cli": "~8.0.0",
     "@angular/language-service": "~8.0.0",
@@ -50,7 +57,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "api-ai-javascript": "^2.0.0-beta.21",
-    "codelyzer": "~4.5.0",
+    "codelyzer": "^5.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.1.1",

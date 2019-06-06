@@ -27,7 +27,7 @@ import { mobileInformation } from '../mocks/mobile-information.mock';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   @Output() toggleSideNav = new EventEmitter<void>();
-  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+  @ViewChild(MatMenuTrigger, { static: false }) trigger: MatMenuTrigger;
 
   // ?Data member to store the city selected in location search field.
   public myControl = new FormControl();
